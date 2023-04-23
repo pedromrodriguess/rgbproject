@@ -4,29 +4,39 @@ namespace prog
 {
   Image::Image(int w, int h, const Color &fill)
   {
+    _imageWidth = w;
+    _imageHeight = h;
+
+    pixels.resize(w);
+    for (int k = 0; k < w; k++) {
+        pixels[k].resize(h);
+    }
+
+    for (int i = 0; i < w; i++) {
+      for (int j = 0; j < h; j++) {
+        pixels[i][j] = fill;
+    }
+    }
   }
   Image::~Image()
   {
   }
   int Image::width() const
   {
-    return -1;
+    return _imageWidth;
   }
   int Image::height() const
   {
-    return -1;
+    return _imageHeight;
   }
-
-  // TODO: remove this DUMMY_color variable once you have appropriate fields for representing image pixels.
-  Color DUMMY_color;
 
   Color& Image::at(int x, int y)
   {
-    return DUMMY_color;
+    return pixels[x][y];
   }
 
   const Color& Image::at(int x, int y) const
   {
-    return DUMMY_color;
+    return pixels[x][y];
   }
 }

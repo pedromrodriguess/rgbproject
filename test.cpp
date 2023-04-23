@@ -20,9 +20,6 @@ using namespace std;
 #include <sys/wait.h>
 #include <dirent.h>
 
-//Pedro
-#include <cstdio>
-#include <stdio.h>
 namespace prog
 {
 
