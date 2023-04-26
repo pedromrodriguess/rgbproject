@@ -1,13 +1,14 @@
 #ifndef __prog_Image_hpp__
 #define __prog_Image_hpp__
 #include "Color.hpp"
-#include <vector>
 namespace prog
 {
   class Image
   {
   private:
-    std::vector<std::vector<Color>> pixels;
+    // Deve ser mais isto que o professor quer. O vetor de vetores precisa de uma libraria <vector>. Talvez voces nao possam usar libs para alem das que ja foram included no template.
+    // Desta maneira controlas melhor a alocacao de memoria que parece-me ser um ponto que vai ser avaliado.
+    Color** pixels;
     int _imageWidth;
     int _imageHeight;
   public:
