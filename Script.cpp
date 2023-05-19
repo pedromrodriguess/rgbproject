@@ -88,6 +88,14 @@ namespace prog {
                 rotate_right();
                 continue;
             }
+            if(command == "xpm2_open"){
+                xpm2_open();
+                continue;
+            }
+            if(command == "xpm2_save"){
+                xpm2_save();
+                continue;
+            }
         }
     }
     void Script::open() {
@@ -240,5 +248,17 @@ namespace prog {
 
         delete image;
         image = newImage;
+    }
+
+    void Script::xpm2_open() {
+        string filePath;
+        input >> filePath;
+        image = loadFromXPM2(filePath);
+    }
+
+    void Script::xpm2_save() {
+        string filePath;
+        input >> filePath;
+        saveToXPM2(filePath, image);
     }
 }
